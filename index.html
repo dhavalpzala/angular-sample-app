@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Angular Code Challenge</title>
+    <link rel="stylesheet" href="css/app.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
+  </head>
+  <body ng-app="Company">
+    <div ng-controller="homeController">
+      <div class="overflow-hidden">
+        <!-- departments -->
+        <div class="container">
+          <div class="content-header">Departments</div>
+          <div class="content">
+            <div ng-repeat="department in departments">
+              <custom-checkbox text={{department.departmentName}} value="{{department.departmentId}}" on-change="onDepartmentSelectionChange(isChecked, value)" />
+            </div>
+          </div>
+        </div>
+
+        <!-- groups -->
+        <div class="container">
+          <div class="content-header">Groups</div>
+          <div class="content">
+            <div ng-repeat="group in groups">
+              <custom-checkbox is-checked="selectedGroups ? selectedGroups.indexOf(group.groupId) > -1: false" text={{group.groupName}} value="{{group.groupId}}" on-change="onGroupSelectionChange(isChecked, value)" />
+            </div>
+          </div>
+        </div>
+
+        <!-- employees -->
+        <div class="container">
+          <div class="content-header">Employees</div>
+          <div class="content">
+            <div ng-repeat="employee in employees">
+              <custom-checkbox text={{employee.employeeName}} value="{{employee.employeeId}}" on-change="onEmployeeSelectionChange(isChecked, value)" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bottom-container">
+        <div class="results">
+          <div>
+            <div class="col-1">Department</div>
+            <div class="col-2">Group</div>
+            <div class="col-3">Employee</div>
+          </div>
+          <div ng-repeat="result in results">
+            <div class="col-1">{{result.department.departmentName}}</div>
+            <div class="col-2">{{result.group.groupName}}</div>
+            <div class="col-3">{{result.employee.employeeName}}</div>
+          </div>
+        </div>
+        <input class="submit-button" type="button" value="Submit" ng-click="getResults()">
+      </div>
+    </div>
+
+    <script src="js/mock.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controllers/homeController.js"></script>
+    <script src="js/directives/customCheckboxDirective.js"></script>
+  </body>
+</html>

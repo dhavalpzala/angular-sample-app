@@ -1,0 +1,70 @@
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.container {
+  float: left;
+  margin: 0 5%;
+  width: 23.3%;
+  vertical-align: top;
+}
+
+.content-header {
+  background: #3367d6;
+  color: white;
+  padding: 5px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.content {
+  border: 1px solid #000;
+  background: lightgrey;
+  padding: 5px;
+  height: 200px;
+  overflow-y: auto;
+}
+
+.submit-button {
+  float: right;
+  background: #3367d6;
+  color: white;
+  padding: 5px 10px;
+}
+
+.bottom-container {
+  margin:15px 5%;
+}
+
+.results {
+  width: 400px;
+  display: inline-block;
+}
+
+.results .col-1, .results .col-2, .results .col-3 {
+  display: inline-block;
+  margin: 1%;
+  text-align: center;
+  width: 30%;
+}
+
+/* custom checkbox styles */
+.custom-checkbox {
+  margin: 5px 0;
+}
+
+.custom-checkbox input {
+  height: 18px;
+  width: 18px;
+  margin: 0 10px 0 0;
+}
+
+.custom-checkbox label {
+  background: #3367d6;
+  color: white;
+  padding: 3px;
+  text-align: center;
+  display: inline-block;
+  width: calc(100% - 35px);
+  font-size: 15px;
+}
